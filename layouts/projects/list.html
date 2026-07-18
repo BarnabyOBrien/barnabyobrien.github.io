@@ -1,0 +1,51 @@
+{{- define "main" }}
+
+{{- if not .IsHome | and .Title }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+</header>
+{{- end }}
+
+{{- if .Content }}
+<div class="post-content md-content">
+  {{- partial "anchored_headings.html" .Content -}}
+</div>
+{{- end }}
+
+{{- $all := where site.RegularPages "Section" "projects" }}
+{{- $current := where $all "Params.status" "current" }}
+{{- $past := where $all "Params.status" "past" }}
+
+{{- $groups := slice
+  (dict "label" "Current Projects" "pages" $current)
+  (dict "label" "Past Projects" "pages" $past)
+}}
+
+{{- range $groups }}
+{{- if .pages }}
+<h2>{{ .label }}</h2>
+{{- range .pages.ByDate.Reverse }}
+<article class="post-entry">
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">{{ .Title }}</h2>
+  </header>
+  {{- if (ne (.Param "hideSummary") true) }}
+  <div class="entry-content">
+    <p>{{ .Summary | plainify | htmlUnescape }}</p>
+  </div>
+  {{- end }}
+   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+  {{- if not (.Param "hideMeta") }}
+  <footer class="entry-footer">
+    {{- partial "post_meta.html" . -}}
+  </footer>
+  {{- end }}
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

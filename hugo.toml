@@ -1,0 +1,56 @@
+baseURL = 'https://barnabyobrien.github.io/'
+locale = 'en-us'
+title = "Barnaby O'Brien"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+
+[params]
+  mainSections = ["About"]
+  description = "Barnaby O'Brien's personal site — about me, projects, and posts."
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowPostNavLinks = false
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+
+
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/BarnabyOBrien"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:barnaby.obrien@gmail.com"
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    # Passthrough hands LaTeX math straight to KaTeX untouched,
+    # so Goldmark doesn't mangle underscores/backslashes inside equations
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]

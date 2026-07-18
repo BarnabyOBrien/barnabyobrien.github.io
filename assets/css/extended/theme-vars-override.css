@@ -1,0 +1,23 @@
+/* :root {
+  --theme: #fbf0e8;
+  --entry: #ffffff;
+  --primary: rgba(75, 45, 30, 0.9);
+  --secondary: rgba(105, 70, 50, 0.7);
+  --tertiary: rgba(220, 140, 90, 0.18);
+  --content: rgba(75, 45, 30, 0.85);
+  --border: #f0ddc9;
+}
+
+:root[data-theme="dark"] {
+  --theme: #1e1712;
+  --entry: #29201a;
+  --primary: rgba(240, 200, 170, 0.95);
+  --secondary: rgba(240, 200, 170, 0.65);
+  --tertiary: rgba(220, 140, 90, 0.25);
+  --content: rgba(240, 215, 195, 0.85);
+  --border: #3a2c22;
+}
+
+.list {
+  background: var(--theme);
+} */

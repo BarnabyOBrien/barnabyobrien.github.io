@@ -1,0 +1,103 @@
+/* Space between "Current"/"Past" headings and the card right after them */
+h2 + .post-entry {
+  margin-top: 1.5rem;
+}
+.post-content img {
+  max-width: 500px;
+}
+.about-hero {
+  display: flex;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+}
+
+.about-hero-image {
+  flex: 0 0 42%;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-hero-text h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.about-hero-text p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Stack vertically on small screens instead of squishing side-by-side */
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+  }
+  .about-hero-image {
+    flex: none;
+  }
+}
+/* Only the homepage gets a narrower column */
+body.home {
+  --main-width: 1500px;
+}
+
+/* Only the Projects list page */
+body.list.section-projects {
+  --main-width: 640px;
+}
+
+body.page.section-projects {
+  --main-width: 850px;
+}
+
+.inline-icon {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-top: -4px;   /* pulls it upward */
+  color: var(--secondary);
+}
+
+.inline-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.inline-icon:hover {
+  color: var(--primary);
+}
+
+ /* body.section-projects .entry-cover {
+  max-width: 300px;
+  margin: 0.75rem 0 0 0;
+} */
+
+body.section-projects .entry-cover img {
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  max-height: 280px;
+  width: 100%;
+} 
+
+body.section-projects .entry-content {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+}
+
