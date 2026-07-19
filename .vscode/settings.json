@@ -1,0 +1,19 @@
+{
+  "ltex.language": "en-GB",
+  "ltex.enabled": [
+    "markdown",
+    "html",
+    "plaintext"
+  ],
+  "ltex.dictionary": {
+    "en-GB": [
+      "Hugo",
+      "PaperMod",
+      "Barnaby",
+      "O'Brien",
+      "frontmatter",
+      "shortcode",
+      "shortcodes"
+    ]
+  }
+}
