@@ -54,6 +54,17 @@ body.home {
   --main-width: 1500px;
 }
 
+/* CV page: hooked via `bodyClass: cv-wide` in content/CV/index.md front matter,
+   because the CV has no _index.md, so `.Section` (and thus `section-CV`) is empty. */
+body.cv-wide {
+  --main-width: 1500px; /* widen the CV column; bump toward 1500 if you want it wider */
+}
+
+body.list.section-posts {
+  --main-width: 640px;
+}
+
+
 /* Only the Projects list page */
 body.list.section-projects {
   --main-width: 640px;
@@ -94,6 +105,16 @@ body.section-projects .entry-cover img {
   max-height: 280px;
   width: 100%;
 } 
+body.section-posts .entry-cover img {
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  max-height: 280px;
+  width: 100%;
+} 
+
 
 body.section-projects .entry-content {
   -webkit-line-clamp: unset;

@@ -11,9 +11,9 @@ enableRobotsTXT = true
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowPostNavLinks = false
-  ShowBreadCrumbs = true
+  ShowBreadCrumbs = false
   ShowCodeCopyButtons = true
-  ShowRssButtonInSectionTermList = true
+  ShowRssButtonInSectionTermList = false
 
 
 
@@ -35,14 +35,19 @@ enableRobotsTXT = true
   identifier = "projects"
   name = "Projects"
   url = "/projects/"
-  weight = 10
+  weight = 20
 
 [[menu.main]]
   identifier = "posts"
   name = "Posts"
   url = "/posts/"
-  weight = 20
+  weight = 30
 
+[[menu.main]]
+  identifier = "CV"
+  name = "CV"
+  url = "/CV/"
+  weight = 40
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

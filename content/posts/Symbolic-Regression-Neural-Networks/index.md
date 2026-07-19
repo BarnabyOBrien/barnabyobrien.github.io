@@ -1,7 +1,7 @@
 ---
 title: "Symbolic Regression Neural Networks"
 date: 2026-07-14
-summary: "How do you get a neural network to hand you an equation instead of a black box? From a crash course in ordinary neural networks, through sparsity-driven Equation Learner networks, to AI Feynman 2.0 — with a couple of interactive demos along the way."
+summary: "How can we fix the black box natures of neural networks? Is there a way to turn one into an equation we can understand? Yes there is, the solution is Symbolic Regression Neural Networks!"
 math: true
 cover:
   image: "CoverPhoto.png"
