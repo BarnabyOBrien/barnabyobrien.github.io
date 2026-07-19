@@ -1,7 +1,7 @@
 ---
 title: "Symbolic Regression Neural Networks"
 date: 2026-07-14
-summary: "How can we fix the black box natures of neural networks? Is there a way to turn one into an equation we can understand? Yes there is, the solution is Symbolic Regression Neural Networks!"
+summary: "How can we fix the black box natures of neural networks? Is there a way to turn one into an equation we can understand? Yes there is and the solution is Symbolic Regression Neural Networks!"
 math: true
 cover:
   image: "CoverPhoto.png"

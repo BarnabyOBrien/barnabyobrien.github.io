@@ -116,7 +116,8 @@ body.section-posts .entry-cover img {
 } 
 
 
-body.section-projects .entry-content {
+body.section-projects .entry-content,
+body.section-posts .entry-content {
   -webkit-line-clamp: unset;
   display: block;
   overflow: visible;
