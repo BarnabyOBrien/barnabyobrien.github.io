@@ -3,6 +3,7 @@ title: "Symbolic Regression Neural Networks"
 date: 2026-07-14
 summary: "How can we fix the black box natures of neural networks? Is there a way to turn one into an equation we can understand? Yes there is and the solution is Symbolic Regression Neural Networks!"
 math: true
+draft: true
 cover:
   image: "CoverPhoto.png"
   alt: "The EQL network architecture: a neural network whose activation functions are mathematical primitives"
@@ -10,12 +11,12 @@ cover:
   hiddenInSingle: true
 ---
 
-*Based on two talks I gave on symbolic regression neural networks. The neural network crash course follows Michael Nielsen's [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html); the Equation Learner material follows Kim et al. (2021), and the final section follows the AI Feynman 2.0 paper by Udrescu et al. (2020). Full references at the [bottom](#references).*
+*Based on talk I presented on symbolic regression neural networks at the University of Oxford. In preparation for this talk, a significant amount of my initial exploration was through Michael Nielsen's [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html), subsequent exploration was mainly through papers which are referenced at the [bottom of the page](#references-references)*
 
 ## Contents
 
-1. [Fitting equations, not curves](#introduction)
-2. [A crash course in neural networks](#crash-course)
+1. [History of Symbolic Regression](#introSymbReg)
+2. [Symbolic Regression Neural Networks?](#introSR)
 3. [Interactive: backpropagation, demon's-eye view](#demo-backprop)
 4. [Turning a network into an equation](#eql)
 5. [Interactive: sparsity discovers the formula](#demo-sparsity)
@@ -24,13 +25,17 @@ cover:
 8. [What's next?](#conclusion)
 9. [References](#references)
 
-## Fitting equations, not curves {#introduction}
+## History of Symbolic Regression {#introSymbReg}
+In 1601, Johannes Kepler used observations collected by the Danish astronomer Tycho Brahe to deduce that the planets orbit the Sun in elliptical paths. In 1785, Charles-Augustin de Coulomb formulated Coulomb's law using his ingenious torsion balance. Two years later, Jacques Charles inferred the ideal gas law that now bears his name, and twenty-four years after that, Amedeo Avogadro established another fundamental gas law. Fifty-three years later came Maxwell's equations, followed thirty-six years later by Planck's law.
 
-**Symbolic regression (SR) fits an equation to data.** Not a smoothed curve, not a million tuned weights — an actual formula you can write on a blackboard.
+What do all of these discoveries have in common, besides their enormous scientific significance? Each was the result of symbolic regression, the process of inferring a mathematical relationship from a collection of observations. In many cases, these scientists did not even gather the data themselves. Yet by uncovering the underlying mathematical structure hidden within existing measurements, they fundamentally changed our understanding of the natural world.
 
-Physicists have been doing this by hand for centuries. Kepler stared at Tycho Brahe's tables until he deduced that orbits are ellipses (1601). Coulomb extracted his inverse-square law from torsion-balance data (1785). The gas laws came out of decades of careful measurement (1662–1811), and Planck's radiation law (1900) was famously a formula fitted to blackbody data *before* he understood why it worked. Every one of these was symbolic regression, performed by a human, and every one was a breakthrough.
+As science continues to push the boundaries of human knowledge, these acts of symbolic regression become increasingly challenging. History already demonstrates this trend. Newton's laws of motion are considerably simpler than Einstein's theory of relativity, and Newton's law of gravitation is far less mathematically intricate than Einstein's. It is therefore reasonable to expect that the mathematical relationships underlying future scientific discoveries will become even more complex. This naturally raises the question, can we get a helping hand?
 
-The dream is to automate that. The difficulty is that the space of possible formulas is combinatorially enormous — you can't just gradient-descend through "all equations". This post covers one family of answers: **make the neural network itself the formula**, then squeeze it until only the formula is left. To see how, we need to know how an ordinary network works first.
+The answer is yes and, in fact, we have had one for decades. Symbolic regression is not a new idea. As early as the 1970s, researchers were developing algorithms capable of discovering symbolic relationships directly from data. However, traditional symbolic regression is not the focus of this article. Instead, we will explore Symbolic Regression Neural Networks (SRs), an emerging method that can extract explicit mathematical equations from trained neural networks!
+
+## Symbolic Regression Neural Networks? {#introSR}
+{{</* include "blackbox.svg" */>}}
 
 ## A crash course in neural networks {#crash-course}
 

@@ -13,7 +13,7 @@ ShowReadingTime: false
 
 Hi, I'm Barnaby! I'm currently doing research at the University of Oxford in combinatorial quantum field theory under [Paul Balduf](https://paulbalduf.com/). In both my spare time and research I do a lot of coding, feel free to check out my [GitHub](https://github.com/BarnabyOBrien). On this website you can see many of my [current and previous projects]({{< ref "/projects" >}}), as well as [posts]({{< ref "/posts" >}}) based of previous talks I have given. 
 
-I have a large interest in Large Language Models (LLMs) and the associated AI saftey. I am currently upskilling myself working through ARENA's [AI saftey curriculum](https://www.arena.education/curriculum), as well as competiting in many [Kaggle competitions](https://github.com/BarnabyOBrien/Top-3-Kaggle-Ranking).
+I have a large interest in Large Language Models (LLMs) and the associated AI safety. I am currently upskilling myself working through ARENA's [AI safety curriculum](https://www.arena.education/curriculum), as well as competing in many [Kaggle competitions](https://github.com/BarnabyOBrien/Top-3-Kaggle-Ranking).
 
   </div>
 </div>

@@ -113,7 +113,11 @@ body.section-posts .entry-cover img {
   object-fit: contain;
   max-height: 280px;
   width: 100%;
-} 
+}
+
+body.page.section-posts .post-content {
+  text-align: justify;
+}
 
 
 body.section-projects .entry-content,

@@ -1,0 +1,6 @@
+{{ $file := .Get 0 }}
+{{ with .Page.Resources.GetMatch $file }}
+  {{ .Content | safeHTML }}
+{{ else }}
+  {{ errorf "include: no resource %q found next to %s" $file .Page.File.Path }}
+{{ end }}

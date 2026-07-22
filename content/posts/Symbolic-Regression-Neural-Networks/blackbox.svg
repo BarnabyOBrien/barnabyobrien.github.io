@@ -1,0 +1,33 @@
+<svg class="bb-diagram" viewBox="0 0 1500 675" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Diagram: input flows into a black box, which converts it into output.">
+  <style>
+    .bb-diagram { display:block; width:100%; max-width:1500px; height:auto; margin:0 auto;
+      --bg:#eae7de; --grid:#ddd9cd; --ink:#1a1a1a; --box:#111111; --box-top:#333333; --box-text:#e9e6de; }
+    @media (prefers-color-scheme: dark) {
+      .bb-diagram { --bg:#1c1b18; --grid:#2a2825; --ink:#e9e6de; --box:#0a0a0a; --box-top:#2e2e2e; }
+    }
+    .bb-diagram .label     { font:700 34px/1 "Helvetica Neue", Arial, sans-serif; letter-spacing:.12em; fill:var(--ink); }
+    .bb-diagram .box-title { font:700 66px/1 "Helvetica Neue", Arial, sans-serif; fill:var(--box-text); }
+    .bb-diagram .box-sub   { font:400 32px/1 "Helvetica Neue", Arial, sans-serif; fill:var(--box-text); }
+  </style>
+  <defs>
+    <pattern id="grid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <path d="M15 0H0V15" fill="none" stroke="var(--grid)" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6"
+            markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M1 1L10 6L1 11" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="square"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="675" fill="var(--bg)"/>
+  <rect width="1500" height="675" fill="url(#grid)"/>
+  <polygon points="550,250 955,250 955,182 608,182" fill="var(--box-top)"/>
+  <rect x="550" y="250" width="405" height="270" fill="var(--box)"/>
+  <text class="box-title" x="752" y="345" text-anchor="middle">Black Box</text>
+  <text class="box-sub"   x="752" y="418" text-anchor="middle">Input is converted</text>
+  <text class="box-sub"   x="752" y="462" text-anchor="middle">into output</text>
+  <text class="label" x="330" y="368" text-anchor="middle">INPUT</text>
+  <line x1="155" y1="392" x2="500" y2="392" stroke="var(--ink)" stroke-width="5" marker-end="url(#arrow)"/>
+  <text class="label" x="1180" y="368" text-anchor="middle">OUTPUT</text>
+  <line x1="1005" y1="392" x2="1350" y2="392" stroke="var(--ink)" stroke-width="5" marker-end="url(#arrow)"/>
+</svg>
